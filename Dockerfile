@@ -4,7 +4,7 @@ RUN apt update && \
     apt install -y build-essential cmake flex bison \
                    libsndfile-dev libportmidi-dev \
                    portaudio19-dev libpulse-dev \
-                   git && \
+                   alsa-utils nano git && \
     rm -rf /home && \
     cd /root && \
     git clone http://github.com/akjmicro/diet_csound && \
@@ -21,6 +21,6 @@ RUN apt update && \
     cp -a * /usr/local/share/microcsound && \
     cd ../doc && mkdir -p /usr/local/share/doc/microcsound && \
     cp -a * /usr/local/share/doc/microcsound && \
-    apt remove -y build-essential git cmake flex bison
+    apt remove -y build-essential cmake flex bison git
 
 CMD /bin/bash
